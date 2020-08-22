@@ -102,6 +102,9 @@ public class EntryPoint
 			DPF("Path: '{0}'", szFullName);
 		}
 
+		if (showMsg)
+			MessageBox.Show(String.Format("Files are saving to: {0}", szDir), "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 		return null;
 	}
 
