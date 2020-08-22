@@ -6,7 +6,7 @@
  *	
  *  Note: The CSV file should be of the format IDENT(Int64),NAME(string),START(Int64),LENGTH(Int64)
  *  
- *  Note: The files where the CSV regions are saved and applied must be of the sample rate.
+ *  Note: The files where the CSV regions are saved and applied must be of the same sample rate.
  *  The start position and length are represented in samples.
  *
  *	Initial State: Run with a file open where you want to apply regions.
