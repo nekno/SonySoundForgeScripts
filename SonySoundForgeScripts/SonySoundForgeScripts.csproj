@@ -52,6 +52,7 @@
     <Compile Include="Save Regions as Flac Files.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Save Regions to CSV Cutfile.cs" />
     <Compile Include="Save Regions to CSV File.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
