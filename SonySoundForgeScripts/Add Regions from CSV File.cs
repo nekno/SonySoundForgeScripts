@@ -56,16 +56,7 @@ public class EntryPoint
 		string[] markers = File.ReadAllLines(inputFile);
 
 		foreach (string marker in markers) {
-			List<string> values = new List<string>(marker.Split(','));
-
-			for (int i = 0; i < values.Count; i++) {
-				string value = values[i];
-				if (value.StartsWith("\"") && value.Length < i+1) {
-					value = value.TrimStart('\"') + values[i+1].TrimEnd('\"');
-					values[i] = value;
-					values.RemoveAt(++i);
-				}
-			}
+			List<string> values = ParseCsvLine(marker);
 
 			string ident = values[0];
 			string name = values[1];
@@ -78,6 +69,39 @@ public class EntryPoint
 		}
 
 		return null;
+	}
+
+	List<String> ParseCsvLine(String csvLine)
+	{
+		var values = new List<string>(csvLine.Split(','));
+		var returnValues = new List<string>(values.Count);
+
+		for (int i = 0; i < values.Count; i++)
+		{
+			string value = values[i];
+			var countToHere = i + 1;
+
+			if (value.StartsWith("\"") && countToHere < values.Count)
+			{
+				var endIdx = values.FindIndex(countToHere, v => v.EndsWith("\""));
+				if (endIdx >= 0)
+				{
+					var subValues = values.GetRange(i, endIdx - i + 1);
+					returnValues.Add(String.Join(",", subValues).Trim('\"'));
+					i = endIdx;
+				}
+				else
+				{
+					returnValues.Add(value);
+				}
+			}
+			else
+			{
+				returnValues.Add(value);
+			}
+		}
+
+		return returnValues;
 	}
 
 	public void FromSoundForge(IScriptableApp app) {
