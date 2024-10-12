@@ -30,11 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Forge110.Batch">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MAGIX\Sound Forge Pro 11.0\Forge110.Batch.dll</HintPath>
+    <Reference Include="Forge.Batch">
+      <HintPath>..\..\..\..\..\..\..\Program Files\SOUND FORGE\SOUND FORGE Pro 17\Forge.Batch.dll</HintPath>
     </Reference>
-    <Reference Include="Forge110.Script">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MAGIX\Sound Forge Pro 11.0\Forge110.Script.dll</HintPath>
+    <Reference Include="Forge.Script">
+      <HintPath>..\..\..\..\..\..\..\Program Files\SOUND FORGE\SOUND FORGE Pro 17\Forge.Script.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
